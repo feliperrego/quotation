@@ -6,6 +6,8 @@ import { Router } from 'react-router';
 import Routes from './routes';
 import createBrowserHistory from 'history/createBrowserHistory';
 
+import './assets/styles/main.scss';
+
 const history = createBrowserHistory();
 
 render(

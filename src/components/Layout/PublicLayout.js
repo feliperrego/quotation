@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Header from "../Header";
 
 export class PublicLayout extends Component {
 	render() {
 		return (
-			<div>
+			<Fragment>
+				<Header/>
 				{this.props.children}
-			</div>
+			</Fragment>
 		);
 	}
 }
