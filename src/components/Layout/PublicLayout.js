@@ -7,13 +7,16 @@ export class PublicLayout extends Component {
 	render() {
 		return (
 			<Fragment>
-				<Header />
-				{this.props.children}
-				<Footer />
+				<Header/>
+				<main className="container-fluid wrapper">
+					{this.props.children}
+				</main>
+				<Footer/>
 			</Fragment>
 		);
 	}
 }
+
 PublicLayout.propTypes = {
 	children: PropTypes.element.isRequired
 };

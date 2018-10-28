@@ -3,11 +3,19 @@ import AppRoute from "./components/AppRoute";
 import {PublicLayout} from './components/Layout';
 import Home from './pages/Home';
 import {Redirect, Switch} from "react-router";
+import About from "./pages/About";
 
 const routes = [
 	{
 		path: '/',
 		component: Home,
+		layout: PublicLayout,
+		private: false,
+		exact: true
+	},
+	{
+		path: '/about',
+		component: About,
 		layout: PublicLayout,
 		private: false,
 		exact: true
