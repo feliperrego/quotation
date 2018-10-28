@@ -1,9 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { Redirect, Switch } from "react-router";
+import { PublicLayout } from './components/Layout';
 import AppRoute from "./components/AppRoute";
-import {PublicLayout} from './components/Layout';
+
 import Home from './pages/Home';
-import {Redirect, Switch} from "react-router";
 import About from "./pages/About";
+import Privacy from "./pages/Privacy";
 
 const routes = [
 	{
@@ -16,6 +18,13 @@ const routes = [
 	{
 		path: '/about',
 		component: About,
+		layout: PublicLayout,
+		private: false,
+		exact: true
+	},
+	{
+		path: '/privacy',
+		component: Privacy,
 		layout: PublicLayout,
 		private: false,
 		exact: true
