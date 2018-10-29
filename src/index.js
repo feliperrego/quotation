@@ -1,6 +1,6 @@
 import React from 'react';
 import registerServiceWorker from './registerServiceWorker';
-import {render } from 'react-snapshot';
+import ReactDOM from 'react-dom';
 import { Router } from 'react-router';
 
 import Routes from './routes';
@@ -10,7 +10,7 @@ import './assets/styles/main.scss';
 
 const history = createBrowserHistory();
 
-render(
+ReactDOM.render(
 	<Router history={history}>
 		<Routes />
 	</Router>,
