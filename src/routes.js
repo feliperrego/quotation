@@ -8,7 +8,7 @@ import About from "./pages/About";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms/Terms";
 
-const routes = [
+export const routes = [
 	{ path: '/', component: Home, layout: PublicLayout, private: false, exact: true },
 	{ path: '/about', component: About, layout: PublicLayout, private: false, exact: true },
 	{	path: '/privacy', component: Privacy, layout: PublicLayout, private: false, exact: true },
