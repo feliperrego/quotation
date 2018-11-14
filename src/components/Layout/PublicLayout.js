@@ -7,7 +7,7 @@ export class PublicLayout extends Component {
 	render() {
 		return (
 			<Fragment>
-				<Header/>
+				<Header title="quotation" />
 				<main className="container-fluid wrapper">
 					{this.props.children}
 				</main>

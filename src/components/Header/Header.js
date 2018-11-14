@@ -1,14 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router";
 
-const Header = () => {
-
-	const title = 'quotation';
+const Header = ({ title, location }) => {
 
 	return (
 		<header>
 			<h1>{
-				window.location.pathname === '/'
+				location.pathname === '/'
 					? title
 					: <Link to={"/"}>{title}</Link>
 			}</h1>
@@ -16,4 +15,4 @@ const Header = () => {
 	);
 };
 
-export default Header;
+export default withRouter(Header);

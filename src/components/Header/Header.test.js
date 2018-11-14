@@ -1,20 +1,27 @@
 import React from "react";
-import { shallow } from 'enzyme';
+import { Link } from "react-router-dom";
 import Header from './index';
 
-describe('Header component', function () {
-	let wrapper, headerSection;
+describe('Header component', () => {
 
-	beforeEach(() => {
-		wrapper = shallow(<Header />);
-		headerSection = wrapper.find('header');
-	});
+	it('should contain a title', () => {
+		const props = { title: 'quotation', location: { pathname: '/' } };
+		const wrapper = shallow(<Header.WrappedComponent {...props} />);
+		const headerSection = wrapper.find('header h1');
 
-	it('should render properly', function () {
 		expect(
-			headerSection.containsMatchingElement(<h1>Header</h1>)
+			headerSection.containsMatchingElement('quotation')
 		).toBe(true);
 	});
-	it('should contain a title', function () {});
-	it('should contain a Link component when it is on the initial route', function () {});
+
+	it('should contain a Link component when it is on the initial route', () => {
+		const props = { title: 'quotation', location: { pathname: '/another' } };
+		const wrapper = shallow(<Header.WrappedComponent {...props} />);
+		const headerSection = wrapper.find('header h1');
+
+		expect(
+			headerSection.containsMatchingElement(<Link to='/'>quotation</Link>)
+		).toBe(true);
+	});
+
 });
