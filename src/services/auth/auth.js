@@ -1,12 +1,12 @@
-const TOKEN_KEY = 'token';
-const USER_INFO_KEY = 'user';
+export const TOKEN_KEY = 'token';
+export const USER_INFO_KEY = 'user';
 
 const auth = {
-	clearItem(key) {
+	remove(key) {
 		localStorage.removeItem(key);
 	},
 
-	clearAll() {
+	clear() {
 		localStorage.clear();
 	},
 
@@ -14,7 +14,7 @@ const auth = {
 		return localStorage.getItem(key);
 	},
 
-	set(value, key) {
+	set(key, value) {
 		localStorage.setItem(key, value);
 	},
 
