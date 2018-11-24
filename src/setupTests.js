@@ -1,5 +1,6 @@
 import Enzyme, { shallow, render, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+
 Enzyme.configure({ adapter: new Adapter() });
 
 // Enzyme functions
@@ -9,9 +10,12 @@ global.mount = mount;
 
 // LocalStorage mock
 const localStorageMock = {
-    getItem: jest.fn(),
-    setItem: jest.fn(),
-    clear: jest.fn()
+	getItem: jest.fn(),
+	setItem: jest.fn(),
+	removeItem: jest.fn(),
+	clear: jest.fn()
 };
 
-global.localStorage = localStorageMock;
+Object.defineProperty(window, 'localStorage', {
+	value: localStorageMock
+});
