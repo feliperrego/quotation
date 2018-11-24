@@ -7,7 +7,7 @@ describe('CurrentButton component', () => {
 
 	describe('getFlagImage()', () => {
 
-		describe('', () => {
+		describe('when there\'s an image', () => {
 
 			beforeEach(() => {
 				props = { alt: 'Brazil Flag', code: 'brl', image: 'brazil.svg' };
@@ -22,7 +22,7 @@ describe('CurrentButton component', () => {
 			});
 		});
 
-		describe('', () => {
+		describe('when there\'s no image', () => {
 
 			beforeEach(() => {
 				props = { alt: 'Brazil Flag', code: 'brl', image: '' };
