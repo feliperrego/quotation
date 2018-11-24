@@ -1,4 +1,4 @@
-import Api from './api';
+import Api from './';
 import auth from '../auth';
 import axios from 'axios';
 import moxios from 'moxios'
