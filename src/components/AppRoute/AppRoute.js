@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {Route, Redirect} from 'react-router';
+import { Route, Redirect } from 'react-router';
 import auth from '../../services/auth';
 
-const AppRoute = ({isPrivate, component: Component, layout: Layout, ...rest}) => (
+const AppRoute = ({ isPrivate, component: Component, layout: Layout, ...rest }) => (
 	<Route
 		{...rest}
 		render={props => {
 			if (isPrivate) {
-				//TODO: Remove 'auth.isAuthenticated()'.
 				return auth.isAuthenticated() ? (
 					<Layout>
 						<Component {...props} />
@@ -18,18 +17,17 @@ const AppRoute = ({isPrivate, component: Component, layout: Layout, ...rest}) =>
 					<Redirect
 						to={{
 							pathname: "/login",
-							state: {from: props.location}
+							state: { from: props.location }
 						}}
 					/>
 				);
+			} else {
+				return (
+					<Layout>
+						<Component {...props} />
+					</Layout>
+				)
 			}
-			return auth.isAuthenticated() ? (
-				<Redirect to="/"/>
-			) : (
-				<Layout>
-					<Component {...props} />
-				</Layout>
-			);
 		}}
 	/>
 );
